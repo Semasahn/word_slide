@@ -32,4 +32,12 @@ public class TrueCheck : MonoBehaviour
         trueText.text = "True: " + trueCount.ToString();
         falseText.text = "False: " + falseCount.ToString();
     }
+
+    private void FixedUpdate()
+    {
+        if (trueCount == 20)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
+    }
 }

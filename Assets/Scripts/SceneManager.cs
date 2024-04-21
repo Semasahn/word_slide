@@ -26,8 +26,15 @@ public class SceneManager : MonoBehaviour
 
     }
 
+    public void restartButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
     public void exitButton()
     {
         Application.Quit();
     }
+
+   
 }
