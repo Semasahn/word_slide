@@ -972,9 +972,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '   You will ask the player(s) in front og you the words that appear on
+  m_text: '   You will ask the player(s) in front of you the words that appear on
     the screen for 60 seconds. If he/she knows the word correctly, you will swipe
-    the card to the right; if he/she knows the word wrong, you will swipe the card
+    the card to the right. If he/she knows the word wrong, you will swipe the card
     to the left.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
