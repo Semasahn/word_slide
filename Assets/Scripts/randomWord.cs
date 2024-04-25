@@ -13,9 +13,14 @@ using UnityEngine.XR;
 
 public class RandomWord : MonoBehaviour
 {
-    public TextMeshProUGUI cardText;
-    int wordIndex;
-    string[] words = {
+    private TextMeshProUGUI cardText;
+
+    public Transform cardParent;
+
+    public instantiator instantiator;
+
+    List<string> words = new List<string>()
+   {
         "Time\n(Zaman)",
         "Year\n(Yýl)",
         "People\n(Ýnsanlar)",
@@ -115,17 +120,25 @@ public class RandomWord : MonoBehaviour
         "Air\n(Hava)",
         "Teacher\n(Öðretmen)",
         "Building\n(Bina)",
-        "Education\n(Eðitim)" };
+        "Education\n(Eðitim)"
+   };
 
     void Start()
     {
+        Debug.Log(instantiator.instantiatedCardPrefab.transform.GetChild(0).gameObject.name);
+        cardText = instantiator.instantiatedCardPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         CreateWord();
     }
 
-    void CreateWord()
+    public void CreateWord()
     {
-        wordIndex = Random.Range(0, words.Length);
+        int wordIndex = Random.Range(0, words.Count);
+
+        cardText = instantiator.instantiatedCardPrefab.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
         cardText.text = words[wordIndex];
+
+        words.RemoveAt(wordIndex);
     }
 
 }

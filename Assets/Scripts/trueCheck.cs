@@ -6,6 +6,7 @@ public class TrueCheck : MonoBehaviour
 {
     public TextMeshProUGUI trueText;
     public TextMeshProUGUI falseText;
+    public instantiator instantiator;
 
     private int trueCount = 0;
     private int falseCount = 0;
@@ -17,14 +18,22 @@ public class TrueCheck : MonoBehaviour
 
     public void IncrementTrueCount()
     {
-        trueCount++;
-        UpdateUI();
+        if (instantiator.canIncreasePoint)
+        {
+            trueCount++;
+            UpdateUI();
+            instantiator.canIncreasePoint = false;
+        }
     }
 
     public void IncrementFalseCount()
     {
-        falseCount++;
-        UpdateUI();
+        if (instantiator.canIncreasePoint)
+        {
+            falseCount++;
+            UpdateUI();
+            instantiator.canIncreasePoint = false;
+        }
     }
 
     void UpdateUI()

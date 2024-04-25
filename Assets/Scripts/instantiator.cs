@@ -5,11 +5,21 @@ using UnityEngine;
 public class instantiator : MonoBehaviour
 {
     public GameObject cardPrefab;
+    public GameObject instantiatedCardPrefab;
+    public RandomWord randomWord;
+    public bool canIncreasePoint;
+
+    private void Start()
+    {
+        canIncreasePoint = false;
+    }
 
     void InstantiateCard()
     {
-        GameObject newCard = Instantiate(cardPrefab, transform, false);
-        newCard.transform.SetAsFirstSibling();
+        instantiatedCardPrefab = Instantiate(cardPrefab, transform, false);
+        instantiatedCardPrefab.transform.SetAsFirstSibling();
+        randomWord.CreateWord();
+        canIncreasePoint = true;
     }
     void Update()
     {
