@@ -42,20 +42,10 @@ public class swipeEffect : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (transform.localPosition.x > _initialPosition.x)
-        {
-            _swipeLeft = false;
-            trueChecker.IncrementTrueCount(); // Doðru sayýsýný artýr
-        }
-        else // Eðer sola kaydýrýlýyorsa
-        {
-            _swipeLeft = true;
-            trueChecker.IncrementFalseCount(); // Yanlýþ sayýsýný artýr
-        }
-
         _distanceMoved = Mathf.Abs(transform.localPosition.x - _initialPosition.x);
         if (_distanceMoved < 0.4 * Screen.width)
         {
+            // Yeterince kaydýrma yok, konumu ve dönüþü sýfýrlayýn
             transform.localPosition = _initialPosition;
             transform.localEulerAngles = Vector3.zero;
         }
@@ -64,10 +54,20 @@ public class swipeEffect : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             if (transform.localPosition.x > _initialPosition.x)
             {
                 _swipeLeft = false;
+                // Mesafeyi kontrol etmeden önce artýr
+                if (_distanceMoved >= 0.4 * Screen.width)
+                {
+                    trueChecker.IncrementTrueCount();
+                }
             }
             else
             {
                 _swipeLeft = true;
+                // Mesafeyi kontrol etmeden önce artýr
+                if (_distanceMoved >= 0.4 * Screen.width)
+                {
+                    trueChecker.IncrementFalseCount();
+                }
             }
             cardMoved?.Invoke();
             StartCoroutine(MovedCard());

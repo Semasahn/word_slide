@@ -20,7 +20,7 @@ public class RandomWord : MonoBehaviour
     public instantiator instantiator;
 
     List<string> words = new List<string>()
-   {
+    {
         "Time\n(Zaman)",
         "Year\n(Yýl)",
         "People\n(Ýnsanlar)",
@@ -121,7 +121,7 @@ public class RandomWord : MonoBehaviour
         "Teacher\n(Öðretmen)",
         "Building\n(Bina)",
         "Education\n(Eðitim)"
-   };
+    };
 
     void Start()
     {
