@@ -45,7 +45,6 @@ public class swipeEffect : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         _distanceMoved = Mathf.Abs(transform.localPosition.x - _initialPosition.x);
         if (_distanceMoved < 0.4 * Screen.width)
         {
-            // Yeterince kaydýrma yok, konumu ve dönüþü sýfýrlayýn
             transform.localPosition = _initialPosition;
             transform.localEulerAngles = Vector3.zero;
         }
@@ -54,7 +53,7 @@ public class swipeEffect : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             if (transform.localPosition.x > _initialPosition.x)
             {
                 _swipeLeft = false;
-                // Mesafeyi kontrol etmeden önce artýr
+
                 if (_distanceMoved >= 0.4 * Screen.width)
                 {
                     trueChecker.IncrementTrueCount();
@@ -63,7 +62,7 @@ public class swipeEffect : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             else
             {
                 _swipeLeft = true;
-                // Mesafeyi kontrol etmeden önce artýr
+
                 if (_distanceMoved >= 0.4 * Screen.width)
                 {
                     trueChecker.IncrementFalseCount();

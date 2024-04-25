@@ -23,7 +23,6 @@ public class SceneManager : MonoBehaviour
     public void rulesButton()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-
     }
 
     public void restartButton()
@@ -35,6 +34,4 @@ public class SceneManager : MonoBehaviour
     {
         Application.Quit();
     }
-
-   
 }

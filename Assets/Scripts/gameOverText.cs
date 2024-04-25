@@ -8,7 +8,6 @@ public class gameOverText : MonoBehaviour
     public TextMeshProUGUI trueCountText;
     public TextMeshProUGUI falseCountText;
 
-    // Start is called before the first frame update
     void Start()
     {
         string trueCount = PlayerPrefs.GetString("TrueCount");

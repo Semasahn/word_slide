@@ -140,5 +140,4 @@ public class RandomWord : MonoBehaviour
 
         words.RemoveAt(wordIndex);
     }
-
 }
