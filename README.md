@@ -11,7 +11,7 @@
 <img src="https://github.com/Semasahn/word_game_2d/assets/92857033/c2ce24ab-f0f2-4ea3-9381-40d4e1fc3bd9" width="240" height="530"/>
 </p>
 
-# <p align="center"> Gameplay Photo </p>
+# <p align="center"> Gameplay </p>
 <p align = "center">
 <img src="https://github.com/Semasahn/word_game_2d/assets/92857033/b4d441db-f86e-4f3e-89e7-5f40f5e5df91" width="240" height="530"/>
 </p>
