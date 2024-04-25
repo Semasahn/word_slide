@@ -43,6 +43,5 @@ public class TrueCheck : MonoBehaviour
 
         PlayerPrefs.SetString("TrueCount", trueCount.ToString());
         PlayerPrefs.SetString("FalseCount", falseCount.ToString());
-
     }
 }

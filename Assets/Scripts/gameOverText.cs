@@ -16,5 +16,4 @@ public class gameOverText : MonoBehaviour
         trueCountText.text = "True: " + trueCount;
         falseCountText.text = "False: " + falseCount;
     }
-
 }

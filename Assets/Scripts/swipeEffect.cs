@@ -94,5 +94,4 @@ public class swipeEffect : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         }
         Destroy(gameObject);
     }
-
 }
